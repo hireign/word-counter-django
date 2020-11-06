@@ -14,10 +14,11 @@
   <h1>Entered Text:</h1>
   {{fulltext}}
   <h1>Individual count</h1>
-  {{worddict}}
+  {% for word,total in worddict%}
+  {{word}}: {{total}}
+  <br />
+  {%endfor%}
+  <a href="{% url 'home' %}">Start Again</a>
 </body>
-
-
-
 
 </html>

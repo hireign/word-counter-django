@@ -10,7 +10,7 @@ def count(request):
     worddict = dict()
     for word in wordlist:
         if(word not in worddict.keys()):
-            worddict[word] = 0
+            worddict[word] = 1
         else:
             worddict[word] += 1
     return render(request, 'count.html', {'fulltext':fulltext, 'count': len(wordlist), 'worddict':worddict})

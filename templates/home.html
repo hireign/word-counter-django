@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Homepage</title>
@@ -7,10 +8,14 @@
   <meta name="author" content="Hireign">
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 </head>
+
 <body>
   <h1>Word Counter</h1>
-  <textarea name="fulltext" rows="10" cols="40"></textarea>
-  <br/>
-  <input type="submit" value="Count!"/>
+  <form action="{% url 'count' %}">
+    <textarea name="fulltext" rows="10" cols="40"></textarea>
+    <br />
+    <input type="submit" value="Count!" />
+  </form>
 </body>
+
 </html>

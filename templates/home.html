@@ -9,13 +9,15 @@
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 </head>
 
-<body>
-  <h1>Word Counter</h1>
-  <form action="{% url 'count' %}">
-    <textarea name="fulltext" rows="10" cols="40"></textarea>
-    <br />
-    <input type="submit" value="Count!" />
-  </form>
+<body style="margin: 10pt 100pt 25pt 100pt; border:solid 1pt; padding: 10pt 25pt 20pt 25pt">
+  <center>
+    <h1><a style="text-decoration:none; color:darkblue" href="{% url 'home' %}">Word Counter</a>  <a style="text-decoration:none; color:black" href="{% url 'about' %}"> &#9432</a></h1>
+    <form action="{% url 'count' %}">
+      <textarea name="fulltext" rows="25" cols="80" style="border:solid 1pt"></textarea>
+      <br />
+      <input type="submit" value="Count!" />
+    </form>
+  </center>
 </body>
 
 </html>

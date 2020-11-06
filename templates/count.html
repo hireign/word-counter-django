@@ -6,19 +6,27 @@
   <title>Count</title>
   <meta name="description" content="Count page that will return word count">
   <meta name="author" content="Hireign">
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 </head>
 
-<body>
-  <h1>There are {{count}} words in your text</h1>
-  <h1>Entered Text:</h1>
+<body style="margin: 10pt 100pt 25pt 100pt; border:solid 1pt; padding: 10pt 25pt 20pt 25pt">
+  <center>
+    <h1><a style="text-decoration:none; color:darkblue" href="{% url 'home' %}">Word Counter</a>  <a style="text-decoration:none; color:black" href="{% url 'about' %}"> &#9432</a></h1>
+  </center>
+  <h2>There are {{count}} words in your text</h2>
+  <h2>Entered Text:</h2>
   {{fulltext}}
-  <h1>Individual count</h1>
-  {% for word,total in worddict%}
-  {{word}}: {{total}}
-  <br />
-  {%endfor%}
-  <a href="{% url 'home' %}">Start Again</a>
+  <h2>Individual count</h2>
+  <table border="1">
+    {% for word,total in worddict%}
+      <td>{{word}}: {{total}}</td>
+      {% if forloop.counter|divisibleby:"10" %}
+        </tr>
+      {% endif %}
+    {%endfor%}
+  </table>
+  <center>
+    <h3><a href="{% url 'home' %}">Start Again</a></h3>
+  </center>
 </body>
 
 </html>

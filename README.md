@@ -63,32 +63,38 @@ Hello, this project is still in development. Meanwhile, below are a few commands
 
 ### Running the Project
 
-    1. Activate the virtualenv
+  1. Go to the project's root directory and create a virtualenv "myvenv"
+  
+  ```
+  python3 -m venv myvenv
+  ```
 
-    ```
-    source myvenv/bin/activate
-    ```
+  2. Activate the virtualenv
 
-    2. Update your pip
-    
-    ```
-    python -m pip install --upgrade pip
-    ```
-    
-    3. Install the requirements from requirements.txt
-    
-    ```
-    pip install -r requirements.txt
-    ```
+  ```
+  source myvenv/bin/activate
+  ```
 
-    4. Run the project
+  2. Inside myvenv, update your pip
+  
+  ```
+  python -m pip install --upgrade pip
+  ```
+  
+  3. Install the requirements from requirements.txt
+  
+  ```
+  pip install -r requirements.txt
+  ```
 
-    ```
-    python3 manage.py runserver
-    ```
+  4. Run the project
 
-    5. To deactivate the virtualenv
-    
-    ```
-    deactivate
-    ```
+  ```
+  python3 manage.py runserver
+  ```
+
+  5. To deactivate the virtualenv
+  
+  ```
+  deactivate
+  ```

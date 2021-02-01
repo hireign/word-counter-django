@@ -50,16 +50,16 @@ Hello, this project is still in development. Meanwhile, below are a few commands
 
 ### Dependencies
 
-    - python3
+  - python3
 
-        Make sure you are running python 3 with the latest version of pip installer
+    Make sure you are running python 3 with the latest version of pip installer
 
-    - virtualenv
+  - virtualenv
 
-        To install virtualenv
-        ```
-        pip3 install virtualenv --user
-        ```
+    To install virtualenv
+    ```
+    pip3 install virtualenv --user
+    ```
 
 ### Running the Project
 

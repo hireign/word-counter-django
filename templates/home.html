@@ -9,51 +9,53 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
   </head>
   <body>
-    <div class="title">
-      <h1>Word Counter</h1>
-      <span>Open source word counter with cool features</span>
-    </div>
-    <div class="counter">
-      <form action="{% url 'home' %}">
+    <div class="wrapper">
+      <div class="title">
+        <h1>Word Counter</h1>
+        <span>More Accurate than the Google Top 10's</span>
+      </div>
+      <div class="counter">
         <div class="input_area">
-          <textarea
-            id="text"
-            name="fulltext"
-            placeholder="Type or paste"
-            spellcheck="false"
-          ></textarea>
+          <form action="{% url 'home' %}">
+            <textarea
+              id="text"
+              name="fulltext"
+              placeholder="Type or paste"
+              spellcheck="false"
+              rows="20"
+              cols="100"
+            >
+{{fulltext}}</textarea
+            >
+            <input type="submit" value="Count!" />
+          </form>
         </div>
-        <input type="submit" value="Count!" />
-      </form>
-      <div class="stats">
-        <div class="stat_item">
-          <span>ONELINE TEXT</span>
-          <p id="all_total">{{onelinetext}}</p>
-        </div>
-        <div class="stat_item">
-          <span>CHARACTERS</span>
-          <p id="all_total">{{all_total}}</p>
-        </div>
-        <div class="stat_item">
-          <span>ORIGINAL SPACES</span>
-          <p id="all_total">{{original_spaces}}</p>
-        </div>
-        <div class="stat_item">
-          <span>WORDS</span>
-          <p id="words_total">{{words_total}}</p>
-        </div>
-        <div class="stat_item">
-          <span>WITHOUT WHITE SPACES</span>
-          <p id="char_total">{{char_total}}</p>
-        </div>
-        <div class="stat_item">
-          <span>PARAGRAPHS</span>
-          <p id="paragraphs">{{paragraphs}}</p>
+        <div class="stats">
+          <div class="stat_item">
+            <span>CHARACTERS</span>
+            <p id="all_total">{{all_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>ORIGINAL SPACES</span>
+            <p id="all_total">{{original_spaces}}</p>
+          </div>
+          <div class="stat_item">
+            <span>WORDS</span>
+            <p id="words_total">{{words_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>WITHOUT WHITE SPACES</span>
+            <p id="char_total">{{char_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>PARAGRAPHS</span>
+            <p id="paragraphs">{{paragraphs}}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer">
-      <div class="copyright"><p>© WordCounter, 2021</p></div>
+      <div class="footer">
+        <div class="copyright"><p>© Word Counter by Hiren Khant, 2021</p></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,158 @@
+html,
+body {
+  background-color: #fefefe;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  line-height: 14px;
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+}
+
+body {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+.title {
+  text-align: center;
+  width: 925px;
+  margin: 60px auto 0;
+}
+
+.title h1 {
+  font-size: 36px;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #e94b3c;
+}
+
+.title span {
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 5px;
+  color: #8f8f8f;
+}
+
+.counter {
+  width: 925px;
+  margin: 50px auto 0;
+  overflow: hidden;
+}
+
+.input_area {
+  width: 72.5%;
+  float: left;
+}
+
+.counter textarea {
+  background-color: #ffffff;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  color: #a7a7a8;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  height: 320px;
+  padding: 20px;
+  outline: none;
+  resize: none;
+}
+
+.stats {
+  float: right;
+  width: 24.5%;
+}
+
+.stat_item {
+  background-color: #e4e4e4;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.stat_item span {
+  border-bottom: #fefefe 1px solid;
+  color: #666666;
+  display: block;
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: bold;
+  padding: 6px 0;
+}
+
+.stat_item p {
+  color: #e94b3c;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 5px 0;
+}
+
+.footer {
+  overflow: hidden;
+  padding: 25px 0;
+  margin: 0 auto;
+}
+
+.copyright {
+  margin-top: 35px;
+}
+
+.copyright p {
+  color: #8f8f8f;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 930px) {
+  .title {
+    width: 100%;
+    padding: 2%;
+  }
+  .counter {
+    width: 100%;
+    padding: 2%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .title {
+    width: 100%;
+    padding: 0 2%;
+    margin-top: 30px;
+  }
+  .title h1 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .title span {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .counter {
+    width: 100%;
+    padding: 2%;
+  }
+  .input_area {
+    width: 100%;
+  }
+  .stats {
+    width: 100%;
+    margin-top: 40px;
+  }
+}

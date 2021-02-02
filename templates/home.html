@@ -1,23 +1,59 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Homepage</title>
-  <meta name="description" content="Homepage">
-  <meta name="author" content="Hireign">
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
-</head>
-
-<body style="margin: 10pt 100pt 25pt 100pt; border:solid 1pt; padding: 10pt 25pt 20pt 25pt; border-color:#aaaaaa">
-  <center>
-    <h1><a style="text-decoration:none; color:darkblue" href="{% url 'home' %}">Word Counter</a>  <a style="text-decoration:none; color:black" href="{% url 'about' %}"> &#9432</a></h1>
-    <form action="{% url 'count' %}">
-      <textarea name="fulltext" rows="25" cols="80" style="border:solid 1pt"></textarea>
-      <br />
-      <input type="submit" value="Count!" />
-    </form>
-  </center>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>Homepage</title>
+    <meta name="description" content="Homepage" />
+    <meta name="author" content="Hireign" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Word Counter</h1>
+      <span>Open source word counter with cool features</span>
+    </div>
+    <div class="counter">
+      <form action="{% url 'home' %}">
+        <div class="input_area">
+          <textarea
+            id="text"
+            name="fulltext"
+            placeholder="Type or paste"
+            spellcheck="false"
+          ></textarea>
+        </div>
+        <input type="submit" value="Count!" />
+      </form>
+      <div class="stats">
+        <div class="stat_item">
+          <span>ONELINE TEXT</span>
+          <p id="all_total">{{onelinetext}}</p>
+        </div>
+        <div class="stat_item">
+          <span>CHARACTERS</span>
+          <p id="all_total">{{all_total}}</p>
+        </div>
+        <div class="stat_item">
+          <span>ORIGINAL SPACES</span>
+          <p id="all_total">{{original_spaces}}</p>
+        </div>
+        <div class="stat_item">
+          <span>WORDS</span>
+          <p id="words_total">{{words_total}}</p>
+        </div>
+        <div class="stat_item">
+          <span>WITHOUT WHITE SPACES</span>
+          <p id="char_total">{{char_total}}</p>
+        </div>
+        <div class="stat_item">
+          <span>PARAGRAPHS</span>
+          <p id="paragraphs">{{paragraphs}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="copyright"><p>© WordCounter, 2021</p></div>
+    </div>
+  </body>
 </html>

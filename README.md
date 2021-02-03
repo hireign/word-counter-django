@@ -97,3 +97,13 @@ python3 manage.py runserver
 ```
 deactivate
 ```
+
+## UI
+
+### Color Pallettes Considered
+
+EFEBEC
+A0AD79
+438AC9
+C34962
+1C2B52

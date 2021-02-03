@@ -28,7 +28,7 @@ def home(request):
     # number of total characters with white space
     all_total = len(onelinetext) - linebreaks
     # number of total characters without white space
-    char_total = all_total - single_spaces - tabs
+    char_total = all_total - single_spaces
 
     # total paragraphs in the input
     splitedtext = " ".join(onelinetext.split())
@@ -47,4 +47,4 @@ def home(request):
     # sorted_items = sorted(
     #     worddict.items(), key=operator.itemgetter(1), reverse=True)
 
-    return render(request, 'home.html', {'fulltext': fulltext, 'linebreaks': linebreaks, 'onelinetext': onelinetext, 'original_spaces': original_spaces, 'filteredtext': filteredtext, 'paragraphs': paragraphs, 'all_total': all_total, 'char_total': char_total, 'words_total': words_total})
+    return render(request, 'home.html', {'fulltext': fulltext, 'paragraphs': paragraphs, 'all_total': all_total, 'char_total': char_total, 'words_total': words_total})

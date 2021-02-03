@@ -10,37 +10,37 @@ Hello, this project is still in development. Meanwhile, below are a few commands
   django-admin startproject projectname
   ```
 
-* Add an app to a project
+- Add an app to a project
 
   ```python
   python3 manage.py startapp appname
   ```
 
-* Starting the server
+- Starting the server
 
   ```python
   python3 manage.py runserver
   ```
 
-* Creating migrations
+- Creating migrations
 
   ```python
   python3 manage.py makemigrations
   ```
 
-* Migrate the database
+- Migrate the database
 
   ```python
   python3 manage.py migrate
   ```
 
-* Creating a Super User for the admin panel
+- Creating a Super User for the admin panel
 
   ```python
   python3 manage.py createsuperuser
   ```
 
-* Collecting static files into one folder
+- Collecting static files into one folder
 
   ```python
   python3 manage.py collectstatic
@@ -50,51 +50,60 @@ Hello, this project is still in development. Meanwhile, below are a few commands
 
 ### Dependencies
 
-  - python3
+- python3
 
-    Make sure you are running python 3 with the latest version of pip installer
+  Make sure you are running python 3 with the latest version of pip installer
 
-  - virtualenv
+- Install virtualenv
 
-    To install virtualenv
-    ```
-    pip3 install virtualenv --user
-    ```
+  ```
+  pip3 install virtualenv --user
+  ```
 
 ### Running the Project
 
-  1. Go to the project's root directory and create a virtualenv "myvenv"
-  
-  ```
-  python3 -m venv myvenv
-  ```
+1. Go to the project's root directory and create a virtualenv "myvenv"
 
-  2. Activate the virtualenv
+```
+python3 -m venv myvenv
+```
 
-  ```
-  source myvenv/bin/activate
-  ```
+2. Activate the virtualenv
 
-  2. Inside myvenv, update your pip
-  
-  ```
-  python -m pip install --upgrade pip
-  ```
-  
-  3. Install the requirements from requirements.txt
-  
-  ```
-  pip install -r requirements.txt
-  ```
+```
+source myvenv/bin/activate
+```
 
-  4. Run the project
+2. Inside myvenv, update your pip
 
-  ```
-  python3 manage.py runserver
-  ```
+```
+python -m pip install --upgrade pip
+```
 
-  5. To deactivate the virtualenv
-  
-  ```
-  deactivate
-  ```
+3. Install the requirements from requirements.txt
+
+```
+pip install -r requirements.txt
+```
+
+4. Run the project
+
+```
+python3 manage.py runserver
+```
+
+5. To deactivate the virtualenv
+
+```
+deactivate
+```
+
+## UI
+
+### Color Pallettes Considered
+
+EFEBEC
+A0AD79
+438AC9
+C34962
+1C2B52

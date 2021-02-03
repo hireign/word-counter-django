@@ -1,23 +1,62 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Homepage</title>
-  <meta name="description" content="Homepage">
-  <meta name="author" content="Hireign">
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
-</head>
-
-<body style="margin: 10pt 100pt 25pt 100pt; border:solid 1pt; padding: 10pt 25pt 20pt 25pt; border-color:#aaaaaa">
-  <center>
-    <h1><a style="text-decoration:none; color:darkblue" href="{% url 'home' %}">Word Counter</a>  <a style="text-decoration:none; color:black" href="{% url 'about' %}"> &#9432</a></h1>
-    <form action="{% url 'count' %}">
-      <textarea name="fulltext" rows="25" cols="80" style="border:solid 1pt"></textarea>
-      <br />
-      <input type="submit" value="Count!" />
-    </form>
-  </center>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>Homepage</title>
+    <meta name="description" content="Homepage" />
+    <meta name="author" content="Hireign" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <h1>Word Counter</h1>
+        <span>More Accurate than the Google Top 10's</span>
+      </div>
+      <div class="counter">
+        <div class="input_area">
+          <form action="{% url 'home' %}">
+            <textarea
+              id="text"
+              name="fulltext"
+              placeholder="Type or paste"
+              spellcheck="false"
+            >
+{{fulltext}}</textarea
+            >
+            <div class="div-btn">
+              <input id="btn-count" type="submit" value="Count!" />
+            </div>
+          </form>
+        </div>
+        <div class="stats">
+          <div class="stat_item">
+            <span>CHARACTERS</span>
+            <p id="all_total">{{all_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>WORDS</span>
+            <p id="words_total">{{words_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>WITHOUT WHITE SPACES</span>
+            <p id="char_total">{{char_total}}</p>
+          </div>
+          <div class="stat_item">
+            <span>SENTENCES</span>
+            <p id="sentences">5</p>
+          </div>
+          <div class="stat_item">
+            <span>PARAGRAPHS</span>
+            <p id="paragraphs">{{paragraphs}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="copyright"><p>© Word Counter by Hiren Khant, 2021</p></div>
+      </div>
+    </div>
+  </body>
 </html>

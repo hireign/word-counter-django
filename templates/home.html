@@ -20,11 +20,11 @@
           <form action="{% url 'home' %}">
             <textarea
               id="text"
-              name="fulltext"
+              name="full_text"
               placeholder="Type or paste"
               spellcheck="false"
             >
-{{fulltext}}</textarea
+{{full_text}}</textarea
             >
             <div class="div-btn">
               <input id="btn-count" type="submit" value="Count!" />
@@ -46,7 +46,7 @@
           </div>
           <div class="stat_item">
             <span>SENTENCES</span>
-            <p id="sentences">5</p>
+            <p id="sentences">{{sentences}}</p>
           </div>
           <div class="stat_item">
             <span>PARAGRAPHS</span>

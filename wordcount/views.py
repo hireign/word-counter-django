@@ -3,45 +3,29 @@ from django.shortcuts import render
 import re
 import operator
 
-# def home(request):
-#     return render(request, 'home.html')
-
 
 def home(request):
     try:
-        fulltext = request.GET['fulltext']
+        full_text = request.GET['full_text']
     except:
-        fulltext = ""
+        full_text = ""
 
-    # filteredtext = re.sub('(\W+)', ' ', fulltext).lower()
-    # onelinetext = re.sub('\n', ' ', fulltext).lower()
-
-    # original_spaces = fulltext.count(' ')
-    # linebreaks = fulltext.count('\n')
-    # single_spaces = onelinetext.count(' ')
-    # tabs = onelinetext.count('\t')
-
-
-    # wordlist = onelinetext.split()
-    # words_total = len(wordlist) - tabs
-    wordlist = re.findall(r'[\w@#$%^&*/\'\’\-_.]+\b', fulltext)
-    words_total = len(re.findall(r'[\w@#$%^&*/\’\'\-_.]+\b', fulltext))
+    # finding words and putting them in a list
+    word_list = re.findall(r'[\w@#$%^&*/\’\-_.]+\b', full_text)
+    # counting the number of words in the word_list
+    words_total = len(word_list)
 
     # number of total characters with white space
-    # all_total = len(onelinetext) - linebreaks
-    all_total = len(re.findall('.', fulltext))
+    all_total = len(re.findall('.', full_text))
     # number of total characters without white space
-    # char_total = all_total - single_spaces
-    char_total = len(re.findall('\S', fulltext))
+    char_total = len(re.findall('\S', full_text))
+
+    # total sentences
+    sentences = len(re.findall('[\.!]+(\s|\[|$)', full_text))
 
     # total paragraphs in the input
-    # splitedtext = " ".join(onelinetext.split())
-    # splited_spaces = splitedtext.count(' ')
-    # paragraphs = splited_spaces-original_spaces+1
+    paragraphs = len(re.findall('\n\s*\S+', full_text)) + 1
 
-    # newpara_pattern = "\n"
-    # if(re.search(newpara_pattern, fulltext)):
-    #     print("new line!!")
     # worddict = dict()
     # for word in wordlist:
     #     if(word not in worddict.keys()):
@@ -51,4 +35,4 @@ def home(request):
     # sorted_items = sorted(
     #     worddict.items(), key=operator.itemgetter(1), reverse=True)
 
-    return render(request, 'home.html', {'wordlist':wordlist, 'fulltext': fulltext, 'all_total': all_total, 'char_total': char_total, 'words_total': words_total})
+    return render(request, 'home.html', {'full_text': full_text, 'all_total': all_total, 'char_total': char_total, 'words_total': words_total, 'sentences': sentences, 'paragraphs': paragraphs, })
